@@ -445,7 +445,7 @@ async function sendMessage(presetText){
     speakText(reply);
   }catch(err){
     loadingBubble.remove();
-    addBubble('figure', '대답을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+    addBubble('figure', '대답을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요. (원인: ' + (err && err.message ? err.message : err) + ')');
     console.error('Groq API 오류 상세:', err);
   }
 }
